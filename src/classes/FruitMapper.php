@@ -6,6 +6,8 @@ class FruitMapper extends Mapper
         $sql = "SELECT id, name, value from fruits ORDER BY value DESC LIMIT 5";
         $stmt = $this->db->query($sql);
 
+        $result = $stmt + $g;
+
         $results = [];
         while($row = $stmt->fetch()) {
             $results[] = new FruitEntity($row);
